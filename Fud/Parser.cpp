@@ -3,6 +3,7 @@
 #include<vector>
 
 
+
 Parser parser;
 std::string filePath;
 std::vector<Product> currentproduct;
@@ -12,9 +13,15 @@ Product* ptr = &product;
 
 void Parser::readFile()
 {
-	
+	//HRESULT hr;
+
 	parser.read.open(filePath);
-	if (parser.read)
+	if (parser.read.fail())
+	{
+		//hr == E_FAIL;
+		std::cout << "Invalid file name, exiting the program \n";
+		
+	}
 	{
 		while (parser.read)
 		{
@@ -33,6 +40,7 @@ void Parser::readFile()
 
 			//Add file close
 			
+			
 
 			currentproduct.push_back(product);
 			
@@ -50,6 +58,7 @@ void Parser::writeFile()
 
 void Parser::getFilePath()
 {
+
 	std::cout << "Enter file path:" << std::endl;
 	std::cin >> filePath;
 

@@ -14,11 +14,11 @@
 class Product
 {
 public:
-	std::string UI_productName;
-	float		UI_salesTarget		= 0.0f;
-	float		UI_salesPerCambro	= 0.0f;
-	float		UI_cambrosPerBox	= 0.0f;
-	uint32_t     UI_productInHand	= 0;
+	std::string	    UI_productName;
+	float			UI_salesTarget		= 0.0f;
+	float		    UI_salesPerCambro	= 0.0f;
+	uint32_t		UI_cambrosPerBox	= 0;
+	uint32_t		UI_productInHand	= 0;
 	
 
 

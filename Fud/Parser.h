@@ -17,6 +17,7 @@
 #include <iostream>
 #include "Product.h"
 #include <string>
+#include <vector>
 
 
 
@@ -25,6 +26,13 @@ class Parser
 public:
 	std::fstream read;
 	std::fstream write;
+
+public:
+	std::string filePath;
+	std::vector<Product> currentProduct;
+	Product product;
+	Product* ptr = &product;
+
 
 	
 	void readFile();

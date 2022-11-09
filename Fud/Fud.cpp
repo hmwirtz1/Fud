@@ -12,5 +12,5 @@ int main()
     Parser parser;
     parser.getFilePath();
     parser.readFile();
-    parser.checkVector();
+    //parser.checkVector();
 }

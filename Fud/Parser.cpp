@@ -1,48 +1,45 @@
 #include "Parser.h"
 #include "Product.h"
-#include<vector>
+
 
 
 
 Parser parser;
-std::string filePath;
-std::vector<Product> currentproduct;
-Product product;
-Product* ptr = &product;
 
 
 void Parser::readFile()
 {
 	//HRESULT hr;
 
-	parser.read.open(filePath);
+	parser.read.open(parser.filePath);
 	if (parser.read.fail())
 	{
 		//hr == E_FAIL;
 		std::cout << "Invalid file name, exiting the program \n";
 		
 	}
+	
 	{
 		while (parser.read)
 		{
-			parser.read >> product.UI_productName;
-			std::cout << product.UI_productName << "\n";
+			parser.read >> parser.product.UI_productName;
+			std::cout << parser.product.UI_productName << "\n";
 
-			parser.read >> product.UI_cambrosPerBox;
-			std::cout << product.UI_cambrosPerBox << "\n";
+			parser.read >> parser.product.UI_cambrosPerBox;
+			std::cout << parser.product.UI_cambrosPerBox << "\n";
 
-			parser.read >> product.UI_productInHand;
-			std::cout << product.UI_productInHand << "\n";
+			parser.read >> parser.product.UI_productInHand;
+			std::cout << parser.product.UI_productInHand << "\n";
 
 
-			parser.read >> product.UI_salesPerCambro;
-			std::cout << product.UI_salesPerCambro << "\n";
+			parser.read >> parser.product.UI_salesPerCambro;
+			std::cout << parser.product.UI_salesPerCambro << "\n";
 
 			//Add file close
 			
 			
-
-			currentproduct.push_back(product);
+			
+			parser.currentProduct.push_back(product);
 			
 			ptr = NULL;
 		}
@@ -60,14 +57,14 @@ void Parser::getFilePath()
 {
 
 	std::cout << "Enter file path:" << std::endl;
-	std::cin >> filePath;
+	std::cin >> parser.filePath;
 
 }
 
 void Parser::checkVector()
 {
-	std::cout << currentproduct[0].UI_productName << std::endl;
-	std::cout << currentproduct[1].UI_productName << std::endl;
+	std::cout << parser.currentProduct[0].UI_productName << std::endl;
+	std::cout << parser.currentProduct[1].UI_productName << std::endl;
 
 
 }

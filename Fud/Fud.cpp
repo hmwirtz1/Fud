@@ -6,11 +6,13 @@
 #include "Product.h"
 
 
+
 int main()
 {
     std::cout << "Hello Fud\n";
     Parser parser;
     parser.getFilePath();
     parser.readFile();
+   // parser.doMaths();
     //parser.checkVector();
 }

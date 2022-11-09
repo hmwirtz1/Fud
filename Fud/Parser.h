@@ -3,7 +3,7 @@
 //  Currently the file has the format of:
 //										String   : Name of product
 //										UINT32_t : Amount of cambros per box of product. 
-//										UINT32_t : Amount of product in boxes.
+//										UINT32_t : Amount of product on hand.
 //										Float    : Amount of sales of product per cambro
 //	
 //	
@@ -39,5 +39,6 @@ public:
 	void writeFile();
 	void getFilePath();
 	void checkVector();
+	void doMaths();
 };
 

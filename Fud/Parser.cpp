@@ -1,8 +1,6 @@
 #include "Parser.h"
 #include "Product.h"
-
-
-
+#include "Math.h"
 
 Parser parser;
 
@@ -34,6 +32,7 @@ void Parser::readFile()
 
 			parser.read >> parser.product.UI_salesPerCambro;
 			std::cout << parser.product.UI_salesPerCambro << "\n";
+
 
 			//Add file close
 			
@@ -67,4 +66,12 @@ void Parser::checkVector()
 	std::cout << parser.currentProduct[1].UI_productName << std::endl;
 
 
+}
+
+void Parser::doMaths()
+{
+	Math math;
+	
+	math.productUsed(parser.ptr);
+	math.amountToOrder();
 }

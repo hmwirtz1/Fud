@@ -13,3 +13,5 @@ Tier 2 would be less profitable but also less likely to run out of product.
 Create a sales database to more accurately forcast sales for a given week.
 Create a database of products, with costs and usages associated for said product.
 
+
+
